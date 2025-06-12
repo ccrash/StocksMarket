@@ -23,9 +23,10 @@ export default function App() {
   useEffect(() => {
     fetchStockData()
       .then(setData)
-      .finally(() => setLoading(false))
+      .finally(() => { setLoading(false); console.log('data is', data)} )
   }, [])
 
+  
   return (
     <GestureHandlerRootView style={styles.root}>
       <SafeAreaView style={[styles.container, { backgroundColor: isDark ? '#000' : '#fff' }]}>
