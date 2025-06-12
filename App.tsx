@@ -12,7 +12,7 @@ import {
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { fetchStockData, StockPoint } from './api/FetchStockData'
 import { useThemeStore } from './store/useThemeStore'
-import StockChart from './components/StockChart'
+import StockPage from './pages/StockPage'
 
 export default function App() {
   const [data, setData] = useState<StockPoint[]>([])
@@ -23,9 +23,8 @@ export default function App() {
   useEffect(() => {
     fetchStockData()
       .then(setData)
-      .finally(() => { setLoading(false); console.log('data is', data)} )
+      .finally(() => setLoading(false))
   }, [])
-
   
   return (
     <GestureHandlerRootView style={styles.root}>
@@ -41,7 +40,7 @@ export default function App() {
           {loading ? (
             <ActivityIndicator size="large" color={isDark ? '#fff' : '#000'} />
           ) : (
-            <StockChart data={data} isDark={isDark} />
+            <StockPage data={data} isDark={isDark} />
           )}
 
           <View style={styles.themeSwitch}>
@@ -57,35 +56,12 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-  },
-  container: {
-    flex: 1,
-  },
-  content: {
-    flex: 1,
-    padding: 18,
-    justifyContent: 'space-between',
-  },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 12,
-  },
-  icon: {
-    width: 51,
-    height: 47,
-    marginRight: 8,
-    resizeMode: 'contain',
-    borderRadius: 6,
-  },
-  title: {
-    fontWeight: '400',
-    fontSize: 32,
-    lineHeight: 48,
-    letterSpacing: 0,
-  },
+  root: { flex: 1 },
+  container: { flex: 1 },
+  content: { flex: 1, padding: 18, justifyContent: 'space-between' },
+  header: { flexDirection: 'row', alignItems: 'center', marginBottom: 12 },
+  icon: { width: 51, height: 47, marginRight: 8, resizeMode: 'contain', borderRadius: 6 },
+  title: { fontWeight: '400', fontSize: 32, lineHeight: 48, letterSpacing: 0 },
   themeSwitch: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -94,7 +70,5 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderTopColor: '#ccc',
   },
-  switchLabel: {
-    fontSize: 16,
-  },
+  switchLabel: { fontSize: 16 },
 })
