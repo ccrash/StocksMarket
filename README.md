@@ -26,6 +26,12 @@ yarn start
 
 Scan the QR code displayed in the terminal or browser with Expo Go to launch the app.
 
+**Run tests**
+
+```bash
+yarn test
+```
+
 ## Features
 
 - **Fully Typed with TypeScript:**  
@@ -42,5 +48,6 @@ Scan the QR code displayed in the terminal or browser with Expo Go to launch the
 ### Potential Improvements with More Time
 
 - Splash Screen & Icons: A polished first impression is crucial. Custom splash screens and adaptive icons would enhance professionalism.
+- Dynamic loading of Stocks from an API/json to populate the main FlatList
 - UI/UX Refinements: Further visual polish with smoother transitions, micro-interactions, and layout improvements.
 - Localization: Add multi-language support to improve accessibility and usability for international users.

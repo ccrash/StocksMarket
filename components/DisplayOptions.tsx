@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Switch } from 'react-native'
 import { useThemeStore } from '../store/useThemeStore'
 import { DisplayKey } from '../types/Graph'
 
-const Display = ({ currentDisplay, handleDisplay }: { currentDisplay: Record<DisplayKey, boolean>; handleDisplay: (value: DisplayKey) => void }) => {
+export const DisplayOptions = ({ currentDisplay, handleDisplay }: { currentDisplay: Record<DisplayKey, boolean>; handleDisplay: (value: DisplayKey) => void }) => {
   const {theme} = useThemeStore()
 
   const renderOptions = () => {
@@ -58,4 +58,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default Display
+export default DisplayOptions

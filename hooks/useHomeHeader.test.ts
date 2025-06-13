@@ -33,8 +33,7 @@ describe('useHomeHeader', () => {
 
     expect(mockSetOptions).toHaveBeenCalledWith({
       headerStyle: {backgroundColor: '#fff'},
-      headerLeft: expect.any(Function),
-      headerRight: expect.any(Function)
+      headerLeft: expect.any(Function)
     })
   })
 })

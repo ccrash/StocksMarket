@@ -1,6 +1,7 @@
 import React from 'react'
-import { View, Text, StyleSheet, Image } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 import { useThemeStore } from '../store/useThemeStore'
+import Animated from 'react-native-reanimated'
 
 const Header = ({ id }: { id: string }) => {
   const {theme} = useThemeStore()
@@ -11,7 +12,12 @@ const Header = ({ id }: { id: string }) => {
   const source = "../assets/AAPL.png"
   return (
     <View style={styles.container}>
-      <Image source={require(source)} style={styles.icon} />
+      <Animated.Image
+        source={require(source)}
+        style={styles.icon}
+        resizeMode="cover"
+        sharedTransitionTag={`stock-${id}`}
+      />
       <Text style={[styles.title, { color: theme.text }]}>
         {`${id} Stock History`}
       </Text>
@@ -28,12 +34,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   icon: {
-    width: 32,
-    height: 32,
-    marginBottom: 8
+    width: 51,
+    height: 47,
+    marginRight: 12
   },
   title: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: '600'
   }
 })
