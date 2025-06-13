@@ -1,14 +1,21 @@
-import { create } from 'zustand'
+import {create} from 'zustand'
+import {Appearance} from 'react-native'
+import {lightTheme, darkTheme, Theme} from '../theme/theme'
 
-type Theme = 'light' | 'dark'
-
-type ThemeStore = {
+type State = {
+  isDark: boolean
   theme: Theme
   toggleTheme: () => void
 }
 
-export const useThemeStore = create<ThemeStore>((set) => ({
-  theme: 'light',
-  toggleTheme: () =>
-    set((state) => ({ theme: state.theme === 'light' ? 'dark' : 'light' })),
-}))
+export const useThemeStore = create<State>((set, get) => {
+  const system = Appearance.getColorScheme() === 'dark'
+  return {
+    isDark: system,
+    theme: system ? darkTheme : lightTheme,
+    toggleTheme: () => {
+      const isDark = !get().isDark
+      set({isDark, theme: isDark ? darkTheme : lightTheme})
+    }
+  }
+})
