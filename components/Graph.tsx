@@ -20,7 +20,7 @@ export const Graph = ({ data, selectedSeries }: _Props) => {
   const font = useFont(require('../assets/fonts/Inter-Regular.ttf'), 12)
   
   if (!data || data.length === 0) {
-    return <Text style={styles.message}>No data available</Text>
+    return <Text style={[styles.message, { color: theme.text }]}>No data available</Text>
   }
   
   // Get enabled series with proper typing
@@ -29,7 +29,7 @@ export const Graph = ({ data, selectedSeries }: _Props) => {
     .map(([key]) => key)
   
   if (enabledKeys.length === 0) {
-    return <Text style={styles.message}>No series selected</Text>
+    return <Text style={[styles.message, { color: theme.text }]}>No series selected</Text>
   }
   
   // Transform data for chart
@@ -58,7 +58,7 @@ export const Graph = ({ data, selectedSeries }: _Props) => {
   }
   
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: theme.graphBackground }]}>
       <CartesianChart 
         data={chartData} 
         xKey="x" 
@@ -106,12 +106,10 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 250,
     padding: 16,
-    backgroundColor: '#f8f9fa',
     borderRadius: 8,
   },
   message: {
     textAlign: 'center',
-    color: '#666',
     fontSize: 16,
     padding: 20,
   },

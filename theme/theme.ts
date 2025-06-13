@@ -7,7 +7,8 @@ export const lightTheme = {
   close: '#F44336',
   high: '#FF9800',
   low: '#2196F3',
-  grid: '#e0e0e0'
+  grid: '#e0e0e0',
+  graphBackground: '#f5f5f5',
 }
 
 export const darkTheme = {
@@ -19,7 +20,8 @@ export const darkTheme = {
   close: '#F44336',
   high: '#FF9800',
   low: '#2196F3',
-  grid: '#333333'
+  grid: '#333333',
+  graphBackground: '#1a1a1a',
 }
 
 export type Theme = typeof lightTheme
