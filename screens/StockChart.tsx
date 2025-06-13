@@ -56,7 +56,7 @@ export const StockChart = () => {
   if (loading) {
     return (
       <View style={[styles.center, { backgroundColor: theme.background }]}>
-        <ActivityIndicator size="large" color={theme.text} />
+        <ActivityIndicator size="large" color={theme.text} testID="ActivityIndicator" />
       </View>
     )
   }

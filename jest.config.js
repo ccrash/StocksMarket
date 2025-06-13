@@ -1,6 +1,17 @@
 module.exports = {
   preset: 'react-native',
-  transformIgnorePatterns: ['node_modules/(?!(jest-)?@?react-native|@react-navigation)'],
+  transform: {
+    '^.+\\.[jt]sx?$': 'babel-jest'
+  },
+  transformIgnorePatterns: [
+    "node_modules/(?!(react-native" +
+      "|@react-native" +
+      "|expo" +
+      "|victory-native" +
+      "|@shopify/react-native-skia" +
+      "|@react-navigation" +
+      ")/)"
+  ],
   testMatch: ['**/?(*.)+(test).[jt]s?(x)'],
   globals: {
     'ts-jest': {

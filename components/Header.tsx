@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native'
 import { useThemeStore } from '../store/useThemeStore'
 import Animated from 'react-native-reanimated'
 
-const Header = ({ id }: { id: string }) => {
+export const Header = ({ id }: { id: string }) => {
   const {theme} = useThemeStore()
 
   // const source = '../assets/' + id + '.png'

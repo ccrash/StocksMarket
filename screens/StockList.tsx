@@ -1,5 +1,5 @@
-import React, {useEffect, useMemo, useState} from 'react'
-import {View, Button, FlatList, RefreshControl, ActivityIndicator, StyleSheet} from 'react-native'
+import React from 'react'
+import {View, StyleSheet} from 'react-native'
 import {useNavigation} from '@react-navigation/native'
 import {NativeStackNavigationProp} from '@react-navigation/native-stack'
 import {RootStackParamList} from '../types/navigation'
