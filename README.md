@@ -56,3 +56,10 @@ yarn test
 - Dynamic loading of Stocks from an API/json to populate the main FlatList
 - UI/UX Refinements: Further visual polish with smoother transitions, micro-interactions, and layout improvements.
 - Localization: Add multi-language support to improve accessibility and usability for international users.
+
+## License
+
+This project is licensed under a custom non-commercial license.
+
+❗ Commercial use is prohibited  
+❗ Use in AI/ML systems is strictly prohibited without permission
